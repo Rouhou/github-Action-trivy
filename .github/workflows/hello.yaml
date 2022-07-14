@@ -1,0 +1,10 @@
+ame: Testing github workflows
+
+on: push
+
+jobs:
+  init:
+    runs-on: self-hosted
+    steps:
+      - run: echo 'hello cloud gurus'
+      - run: echo $HOSTNAME
