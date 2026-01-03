@@ -3,7 +3,7 @@ name: CI - Pipeline Informatif
 on:
   push:
     branches:
-      - ci
+      - lab-1
 
 jobs:
   integration-continue:
