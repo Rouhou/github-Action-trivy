@@ -21,7 +21,7 @@ jobs:
       
       - name: Push de l’image Docker
         run: |
-          echo "secrets.DOCKERHUB_USERNAME ${{ secrets.DOCKERHUB_USERNAME }}"
+          echo "secrets.DOCKERHUB_USERNAME ${{ secrets.DOCKERHUB_USERNAME }}" 
 
       - name: Connexion à Docker Hub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login \
