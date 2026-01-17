@@ -21,16 +21,16 @@ jobs:
       
       - name: Push de l’image Docker
         run: |
-          echo "dev.secrets.DOCKERHUB_USERNAME ${{ dev.secrets.DOCKERHUB_USERNAME }}" 
+          echo "Varibale DEBUG ${{ DEBUG }}" 
 
       - name: Connexion à Docker Hub
-        run: echo "${{ dev.secrets.DOCKERHUB_TOKEN }}" | docker login \
-             -u "${{ dev.secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login \
+             -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
       - name: Build de l’image Docker
         run: |
-          docker build -t ${{ dev.secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$IMAGE_TAG .
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$IMAGE_TAG .
 
       - name: Push de l’image Docker
         run: |
-          docker push ${{ dev.secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$IMAGE_TAG
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$IMAGE_TAG
