@@ -21,7 +21,7 @@ jobs:
       
       - name: Push de l’image Docker
         run: |
-          echo "Varibale DEBUG ${{ DEBUG }}" 
+          echo "Varibale DEBUG ${{ dev.DEBUG }}" 
 
       - name: Connexion à Docker Hub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login \
