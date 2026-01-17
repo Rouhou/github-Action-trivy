@@ -31,6 +31,10 @@ jobs:
       - name: Build de l’image Docker
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$IMAGE_TAG .
+        
+       - name: Test de l’image Docker
+        run: |
+          docker image ls ${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME:$IMAGE_TAG 
 
       - name: Push de l’image Docker
         run: |
