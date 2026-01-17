@@ -21,7 +21,7 @@ jobs:
       
       - name: Test Varibales
         run: |
-          echo "Varibale MYVAR $MYVAR" 
+          echo "Varibale MYVAR  ${{ vars.MYVAR }} "
           echo "Varibale IMAGE_NAME $IMAGE_NAME"
 
       - name: Connexion à Docker Hub
