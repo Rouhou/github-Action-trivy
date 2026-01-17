@@ -23,6 +23,7 @@ jobs:
         run: |
           echo "Varibale MYVAR  ${{ vars.MYVAR }} "
           echo "Varibale IMAGE_NAME $IMAGE_NAME"
+          echo "Varibale DOCKER_HUB_REGISTRY  ${{ vars.DOCKER_HUB_REGISTRY }} "
 
       - name: Connexion à Docker Hub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }} | docker login \
