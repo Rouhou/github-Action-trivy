@@ -14,7 +14,7 @@ jobs:
     env:
       IMAGE_NAME: ci-html-demo
       IMAGE_TAG: latest
-      DOCKER_HUB_REGISTRY: moisawade
+      DOCKER_REGISTRY: moisawade
 
     steps:
       - name: Récupération du code
@@ -24,7 +24,7 @@ jobs:
         run: |
           echo "Varibale MYVAR  ${{ vars.MYVAR }} "
           echo "Varibale IMAGE_NAME $IMAGE_NAME"
-          echo "Varibale DOCKER_HUB_REGISTRY  $DOCKER_HUB_REGISTRY "
+          echo "Varibale DOCKER_REGISTRY  $DOCKER_REGISTRY "
 
       - name: Connexion à Docker Hub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }} | docker login \
@@ -32,12 +32,12 @@ jobs:
 
       - name: Build de l’image Docker
         run: |
-          docker build -t $DOCKER_HUB_REGISTRY/$IMAGE_NAME:$IMAGE_TAG .
+          docker build -t $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG .
         
       - name: Test de l’image Docker
         run: |
-          docker image ls $DOCKER_HUB_REGISTRY/$IMAGE_NAME:$IMAGE_TAG 
+          docker image ls $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG 
 
       - name: Push de l’image Docker
         run: |
-          docker push $DOCKER_HUB_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+          docker push $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
