@@ -52,4 +52,9 @@ jobs:
           exit-code: 1
           vuln-type: os,library
           ignore-unfixed: true
-          
+
+  test-runner:
+    runs-on: runner-isi
+    steps:
+      - name: Print hostname
+        run: echo "Hostname: $(hostname)"
