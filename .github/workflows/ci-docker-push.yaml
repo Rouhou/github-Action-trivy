@@ -54,7 +54,7 @@ jobs:
       #     ignore-unfixed: true
 
   test-runner:
-    runs-on: runner-isi
+    runs-on: isi
     steps:
       - name: Print hostname
         run: |
