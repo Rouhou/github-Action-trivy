@@ -44,11 +44,11 @@ jobs:
           docker push $DOCKER_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
           
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@0.20.0
+        uses: aquasecurity/trivy-action@v0
         with:
           image-ref: moisawade/ci-html-demo:latest
           format: table
-          severity: CRITICAL,HIGH, MEDIUM
+          severity: CRITICAL,HIGH,MEDIUM
           exit-code: 1
           vuln-type: os,library
           ignore-unfixed: true
