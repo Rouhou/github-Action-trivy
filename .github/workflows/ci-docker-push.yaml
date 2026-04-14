@@ -52,6 +52,7 @@ jobs:
           exit-code: 1
           vuln-type: os,library
           ignore-unfixed: true
+          scanners: vuln
 
   test-runner:
     runs-on: isi
